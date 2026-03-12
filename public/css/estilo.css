@@ -1,0 +1,127 @@
+/* ===== Reinicio y variables ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+    --azul:   #0984e3;
+    --oscuro: #2d3436;
+    --claro:  #f5f6fa;
+    --gris:   #636e72;
+    --borde:  #dfe6e9;
+    --rojo:   #d63031;
+    --radio:  6px;
+    --sombra: 0 2px 6px rgba(0,0,0,.08);
+}
+body { font-family: system-ui, sans-serif; background: var(--claro); color: var(--oscuro); line-height: 1.6; font-size: 15px; }
+a { color: var(--azul); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ===== Cabecera ===== */
+header {
+    background: var(--azul);
+    color: #fff;
+    padding: .7rem 1.5rem;
+    position: sticky; top: 0; z-index: 100;
+    box-shadow: 0 2px 5px rgba(0,0,0,.2);
+}
+nav { display: flex; align-items: center; gap: 1rem; max-width: 1100px; margin: 0 auto; flex-wrap: wrap; }
+.marca { color: #fff; font-size: 1.1rem; font-weight: 700; white-space: nowrap; }
+.buscador-nav { display: flex; gap: .4rem; flex: 1; min-width: 180px; }
+.buscador-nav input { flex: 1; padding: .4rem .7rem; border: none; border-radius: var(--radio); font-size: .9rem; }
+.buscador-nav button,
+button[type=submit] {
+    padding: .4rem .9rem;
+    background: rgba(255,255,255,.2);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,.4);
+    border-radius: var(--radio);
+    cursor: pointer; font-size: .9rem;
+}
+.buscador-nav button:hover, button[type=submit]:hover { background: rgba(255,255,255,.35); }
+
+main { max-width: 1100px; margin: 1.5rem auto; padding: 0 1rem; }
+footer { text-align: center; padding: 1.5rem; color: var(--gris); font-size: .85rem; margin-top: 2rem; }
+
+/* ===== Tarjeta ===== */
+.tarjeta { background: #fff; border-radius: var(--radio); box-shadow: var(--sombra); padding: 1.2rem 1.4rem; }
+
+/* ===== Portada ===== */
+.portada { text-align: center; padding: 2.5rem 1rem; }
+.portada h1 { font-size: 1.8rem; margin-bottom: .4rem; }
+.portada p  { color: var(--gris); margin-bottom: 1.2rem; }
+.formulario-busqueda { display: flex; justify-content: center; }
+.caja-busqueda { display: flex; width: 100%; max-width: 480px; gap: .4rem; }
+.caja-busqueda input { flex: 1; padding: .65rem 1rem; border: 1px solid var(--borde); border-radius: var(--radio); font-size: 1rem; }
+.caja-busqueda button { padding: .65rem 1.2rem; background: var(--azul); color: #fff; border: none; border-radius: var(--radio); font-size: 1rem; cursor: pointer; }
+.caja-busqueda button:hover { background: #0773c5; }
+
+/* ===== Rejilla ===== */
+.rejilla-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; margin-top: 1.5rem; }
+
+/* ===== Listas ===== */
+.lista-ciudades { list-style: none; }
+.lista-ciudades li { display: flex; justify-content: space-between; align-items: center; padding: .5rem 0; border-bottom: 1px solid var(--borde); }
+.lista-ciudades li:last-child { border-bottom: none; }
+.gris    { color: var(--gris); font-size: .85rem; }
+.etiqueta { background: var(--azul); color: #fff; font-size: .75rem; padding: .1rem .45rem; border-radius: 20px; }
+
+/* ===== Cabecera de página ===== */
+.cabecera-pagina { margin-bottom: 1.2rem; }
+.cabecera-pagina h1 { font-size: 1.4rem; }
+.btn-volver { display: inline-block; margin-bottom: .6rem; color: var(--azul); font-size: .9rem; }
+
+/* ===== Menú de opciones ===== */
+.tarjetas-menu { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1.2rem; }
+.tarjeta-menu {
+    background: #fff; border-radius: var(--radio); box-shadow: var(--sombra);
+    padding: 1.8rem 1.2rem; text-align: center;
+    transition: transform .2s, box-shadow .2s; color: var(--oscuro); display: block;
+}
+.tarjeta-menu:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,.1); text-decoration: none; }
+.icono-menu { font-size: 2.2rem; display: block; margin-bottom: .6rem; }
+.tarjeta-menu h2 { font-size: 1rem; margin-bottom: .3rem; }
+.tarjeta-menu p  { color: var(--gris); font-size: .85rem; }
+
+/* ===== Tiempo actual ===== */
+.tiempo-actual { display: flex; gap: 2rem; flex-wrap: wrap; }
+.tiempo-izquierda { display: flex; align-items: center; gap: .8rem; flex: 0 0 auto; }
+.tiempo-izquierda img { width: 76px; height: 76px; }
+.temperatura-grande { font-size: 2.8rem; font-weight: 700; display: block; }
+.descripcion { text-transform: capitalize; color: var(--gris); }
+.tiempo-derecha { flex: 1; min-width: 240px; }
+.rejilla-datos { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: .6rem; }
+.dato { background: var(--claro); border-radius: var(--radio); padding: .55rem .75rem; }
+.etiqueta-dato { display: block; font-size: .75rem; color: var(--gris); margin-bottom: .1rem; }
+.valor-dato { font-weight: 600; font-size: .95rem; }
+
+/* ===== Gráficas ===== */
+.fila-graficas { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; margin-top: 1.2rem; }
+.tarjeta-grafica h3 { font-size: .95rem; margin-bottom: .9rem; }
+
+/* ===== Tabla ===== */
+.tabla-scroll { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: .88rem; }
+thead { background: var(--claro); }
+th, td { padding: .55rem .75rem; border-bottom: 1px solid var(--borde); text-align: left; white-space: nowrap; }
+th { font-weight: 600; }
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: var(--claro); }
+
+/* ===== Semana ===== */
+.tarjetas-semana { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 1rem; }
+.tarjeta-dia { text-align: center; padding: .9rem .7rem; }
+.nombre-dia { font-weight: 700; font-size: .88rem; }
+.desc-dia   { font-size: .75rem; color: var(--gris); margin: .2rem 0 .4rem; min-height: 2.4em; }
+.temps-dia  { display: flex; justify-content: center; gap: .6rem; font-weight: 600; }
+.temp-maxima { color: var(--rojo); }
+.temp-minima { color: var(--azul); }
+.detalles-dia { margin-top: .3rem; display: flex; flex-direction: column; gap: .1rem; font-size: .75rem; color: var(--gris); }
+
+/* ===== Avisos ===== */
+.aviso { padding: .7rem 1rem; border-radius: var(--radio); margin-bottom: .9rem; }
+.aviso-error { background: #fff3cd; color: #856404; border: 1px solid #ffc107; }
+
+/* ===== Responsive ===== */
+@media (max-width: 580px) {
+    .portada h1 { font-size: 1.4rem; }
+    .tiempo-actual { flex-direction: column; }
+    .temperatura-grande { font-size: 2.2rem; }
+}

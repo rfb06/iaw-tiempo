@@ -1,0 +1,16 @@
+services:
+  weather-app:
+    build: .
+    ports:
+      - "8080:80"
+    environment:
+      OPENWEATHER_API_KEY: ${OPENWEATHER_API_KEY}
+    volumes:
+      # Hot-reload del código durante desarrollo
+      - ./:/var/www/html/weather-app
+      # Caché persistente entre reinicios
+      - weather_cache:/var/www/html/weather-app/cache
+    restart: unless-stopped
+
+volumes:
+  weather_cache:
