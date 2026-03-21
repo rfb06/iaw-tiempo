@@ -61,3 +61,4 @@ bashdocker compose logs -f                                              # Ver lo
 docker compose down                                                 # Parar
 docker compose exec weather-app rm -f cache/*.json                 # Limpiar caché
 docker compose exec weather-app printenv OPENW
+# El docker desplegado se inicia automaticamente y puedes acceder desde eltiemporicardo.ddns.net
